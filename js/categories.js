@@ -1,3 +1,7 @@
+if (localStorage.getItem("userLog") != undefined){
+    document.getElementById("Usuario").innerHTML = localStorage.getItem("userLog");
+}
+
 const ORDER_ASC_BY_NAME = "AZ";
 const ORDER_DESC_BY_NAME = "ZA";
 const ORDER_BY_PROD_COUNT = "Cant.";

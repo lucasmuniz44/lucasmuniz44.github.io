@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>eMercado - Todo lo que busques está aquí</title>
 
+  <link rel="icon" type="img" href="img/proyecto.png">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -29,8 +30,8 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
-          </li>
           <li class="nav-item">
+            <a class="nav-link" href="login.html" id="Usuario">Ingresar</a>
           </li>
         </ul>
       </div>
@@ -39,15 +40,58 @@
   <main class="pb-5 container">
     <div class="container">
 
-<div class="text-center p-4">
-  <h2>Listado</h2>
-</div>
-
-<p id="info">
-
-</p>
-
+      <div class="text-center p-4">
+        <h2>Productos</h2>
+        <p class="lead">Estos son los productos disponibles</p>
       </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col text-end">
+            <div class="btn-group btn-group-toggle mb-4" data-bs-toggle="buttons">
+              <input type="radio" class="btn-check" name="options" id="sortByNameAsc">
+              <label class="btn btn-light" for="sortByNameAsc">A-Z</label>
+              <input type="radio" class="btn-check" name="options" id="sortByNameDesc">
+              <label class="btn btn-light" for="sortByNameDesc">Z-A</label>
+              <input type="radio" class="btn-check" name="options" id="sortByPriceAsc">
+              <label class="btn btn-light" for="sortByPriceAsc"><i class="fas fa-sort-amount-up mr-1">$</i></label>
+              <input type="radio" class="btn-check" name="options" id="sortByPriceDesc">
+              <label class="btn btn-light" for="sortByPriceDesc"><i class="fas fa-sort-amount-down mr-1">$</i></label>
+              <input type="radio" class="btn-check" name="options" id="sortByRelevance" checked>
+              <label class="btn btn-light" for="sortByRelevance"><i
+                  class="fas fa-sort-amount-down mr-1">Rel.</i></label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6 offset-lg-6 col-md-12 mb-1 container">
+          <div class="row container p-0 m-0">
+            <div class="col">
+              <p class="font-weight-normal text-end my-2">Cant.</p>
+            </div>
+            <div class="col">
+              <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+            </div>
+            <div class="col">
+              <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+            </div>
+            <div class="col-3 p-0">
+              <div class="btn-group" role="group">
+                <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
+                <button class="btn btn-link btn-sm" id="clearRangeFromFilter">Limpiar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p id="info">
+
+      </p>
+
+    </div>
   </main>
   <footer class="text-muted">
     <div class="container">

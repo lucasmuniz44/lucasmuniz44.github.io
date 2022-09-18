@@ -1,3 +1,7 @@
+if (localStorage.getItem("userLog") != undefined){
+    document.getElementById("Usuario").innerHTML = localStorage.getItem("userLog");
+}
+
 let productCost = 0;
 let productCount = 0;
 let comissionPercentage = 0.13;

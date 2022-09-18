@@ -1,14 +1,39 @@
-document.getElementById("confirmado").addEventListener("click", function(){
+if (localStorage.getItem("userLog") != undefined){
+    document.getElementById("Usuario").innerHTML = localStorage.getItem("userLog");
+}
 
-    const email = document.getElementById("email").value
-    const pass = document.getElementById("pass").value
+document.getElementById("confirmado").addEventListener("click", function () {
 
-    if (email && pass) {
+    inputEmail = document.getElementById("inputEmail").value
+    inputPass = document.getElementById("inputPass").value
 
-        window.location.href = "index.html"
+    if (inputEmail == null || inputEmail == "") {
+        document.getElementById("inputEmail").value = "Ingrese un Email"
+        window.location.href = "login.html";
 
-    }else{
-        window.locationn.href = "login.html"
+    } else if(inputPass == null || inputPass == ""){
+        document.getElementById("inputPass").value = "Ingrese una contraseña"
+        window.location.href = "login.html";
+
+    } else if (inputEmail != "" && inputPass != ""){
+        localStorage.setItem("userLog", inputEmail)
+        window.location.href = "index.html";
     }
-    
+
 });
+
+//document.getElementById("confirmado").addEventListener("click", function () {
+
+//    inputEmail = document.getElementById("inputEmail").value
+//    inputPass = document.getElementById("inputPass").value
+
+//    if (inputEmail && inputPass) {
+//        localStorage.setItem("userLog", inputEmail)
+//        window.location.href = "index.html";
+
+//    } else {
+//        error.textContent = "Please enter a valid number"
+//        window.location.href = "login.html";
+//    }
+
+//});
