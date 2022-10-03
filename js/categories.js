@@ -1,5 +1,10 @@
 if (localStorage.getItem("userLog") != undefined){
     document.getElementById("Usuario").innerHTML = localStorage.getItem("userLog");
+} else (document.getElementById("logOut").innerHTML = "Iniciar sesión")
+
+function cerrarSesion(){
+    localStorage.removeItem("userLog");
+    location.reload();
 }
 
 const ORDER_ASC_BY_NAME = "AZ";

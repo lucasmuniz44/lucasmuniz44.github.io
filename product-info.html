@@ -30,20 +30,68 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
-          <li class="nav-item">
-            <a class="nav-link" href="login.html" id="Usuario">Ingresar</a>
-          </li>
-        </ul>
+            <li class="nav-item">
+              <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="login.html" id="Usuario" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Ingresar
+                    </a>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+                <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+                <li><a class="dropdown-item" id="logOut" href="login.html" onclick="cerrarSesion()">Cerrar sesión</a></li>
+              </ul>
+            </li>
+            </li>
+          </ul>
+        </div>
       </div>
+    </nav>
+
+  <main role="main">
+    <div class="container mt-5">
+    <h3 id="productoName"></h3>
+    <hr class="my-3">
+      <strong>Precio</strong>
+      <p id="productoCostCurrency"></p>
+      <strong>Descripción</strong>
+      <p id="productoDescription"></p>
+      <strong>Categoria</strong>
+      <p id="productoCategory"></p>
+      <strong>Cantidad de vendidos</strong>
+      <p id="productoSold"></p>
+      <strong>Imágenes ilustrativas</strong>
+      <div class="row" id="imgInfo">
     </div>
-  </nav>
-  <main>
+    </div>
+    <hr class="my-3">
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+    <h5>Comentar</h5>
+    <p>Tu opinión</p>
+    <textarea rows="10" cols="70"></textarea>
+    <br>
+    <label>Tu puntuación</label>
+    <br>
+    <br>
+    <select><option value="">1</option>
+    <option value="">2</option>
+    <option value="">3</option>
+    <option value="">4</option>
+    <option value="">5</option></select>
+    <br>
+    <br>
+    <button class="btn btn-info">Enviar</button>
     </div>
+    <div class="container" id="pruebaComentarios"></div>
+    <div class="container">
+      <hr class="my-3">
+      <strong>Productos relacionados</strong>    
+      <div class="row justify-content-center" id="productRelated">
+
+      </div>
   </main>
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">

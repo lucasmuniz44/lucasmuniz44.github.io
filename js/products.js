@@ -1,5 +1,10 @@
 if (localStorage.getItem("userLog") != undefined){
     document.getElementById("Usuario").innerHTML = localStorage.getItem("userLog");
+} else (document.getElementById("logOut").innerHTML = "Iniciar sesión")
+
+function cerrarSesion(){
+    localStorage.removeItem("userLog");
+    location.reload();
 }
 
 const ORDER_ASC_BY_NAME = "AZ";
@@ -37,7 +42,7 @@ function sortAndShowCategories(criterio, array) {
     showList(FiltroArray);
 }
 
-document.addEventListener("DOMContentLoaded", function (a) {
+document.addEventListener("DOMContentLoaded", function () {
     fetch(PRODUCTS_URL + localStorage.getItem("catID") + EXT_TYPE)
         .then(respuesta => respuesta.json())
         .then(data => {
@@ -83,6 +88,11 @@ document.addEventListener("DOMContentLoaded", function (a) {
 
 })
 
+function setProduct(id){
+    localStorage.setItem("ProdID", id);
+    window.location.href = "product-info.html";
+}
+
 
 function showList(array) {
     array.forEach(element => {
@@ -90,7 +100,7 @@ function showList(array) {
             ((max == 0) || (parseInt(element.cost) <= max))) {
 
         var elementHTML =
-        `<div class="list-group-item list-group-item-action">
+        `<div onclick="setProduct(${element.id})" class="list-group-item list-group-item-action cursor-active">
         <div class="row">
         <div class="col-3">
         <img src="${element.image}" alt="imagen producto" class="img-thumbnail">
