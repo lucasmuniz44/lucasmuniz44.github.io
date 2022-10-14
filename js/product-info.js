@@ -32,13 +32,26 @@ document.addEventListener("DOMContentLoaded", () => (
         .then(respuesta => respuesta.json())
         .then(data => {
             producto = data;
+
+            document.getElementById("listado").innerHTML = "Volver a " + producto.category
+
+            document.getElementById("listado").addEventListener("click", function () {
+                localStorage.getItem("catID");
+                window.location = "products.html"
+            });
+
             document.getElementById("productoName").innerHTML = producto.name;
+
             document.getElementById("productoCostCurrency").innerHTML = producto.currency + " " + producto.cost;
+
             document.getElementById("productoDescription").innerHTML = producto.description;
+
             document.getElementById("productoCategory").innerHTML = producto.category;
+
             document.getElementById("productoSold").innerHTML = producto.soldCount;
+
             for (related of data.relatedProducts){
-                document.getElementById("productRelated").innerHTML += `<div class="col">
+                document.getElementById("productRelated").innerHTML += `<div class="col" >
                 <img onclick="setProduct(${related.id})"class="card-img-top" style="width: 19rem; cursor:pointer;" src="${related.image}" alt="Card image cap" onclick="setProdID()">
             <h5 class="ms-1">${related.name}</h5>
                 </div>`
