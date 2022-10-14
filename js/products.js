@@ -16,17 +16,21 @@ let FiltroArray = [];
 let min = 0;
 let max = 0;
 
-function comparacion(a, b) {
-    return a.name.localeCompare(b.name)
-}
-
 
 function sortAndShowCategories(criterio, array) {
-    if (criterio === ORDER_ASC_BY_NAME) {
-        FiltroArray = array.sort(comparacion)
-    }
-    else if (criterio === ORDER_DES_BY_NAME) {
-        FiltroArray = array.reverse(comparacion)
+    if (criterio === ORDER_ASC_BY_NAME)
+    {
+        FiltroArray = array.sort((a, b) => {
+        if ( a.name < b.name ){ return -1; }
+        if ( a.name > b.name ){ return 1; }
+        return 0;
+    });
+    } else if (criterio === ORDER_DES_BY_NAME){
+        FiltroArray = array.sort((a, b) => {
+        if ( a.name > b.name ){ return -1; }
+        if ( a.name < b.name ){ return 1; }
+        return 0;
+    });
     }
     else if (criterio === ORDER_ASC_BY_PRICE) {
         FiltroArray = array.sort((a, b) => { return a.cost - b.cost })
@@ -49,8 +53,6 @@ document.addEventListener("DOMContentLoaded", function () {
             FiltroArray = data.products;
             showList(FiltroArray);
         })
-
-
 
     document.getElementById("sortByNameAsc").addEventListener("click", function () {
         sortAndShowCategories(ORDER_ASC_BY_NAME, FiltroArray);
