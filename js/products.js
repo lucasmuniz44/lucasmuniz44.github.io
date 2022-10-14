@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(data => {
             FiltroArray = data.products;
             showList(FiltroArray);
-        })
+        });
 
     document.getElementById("sortByNameAsc").addEventListener("click", function () {
         sortAndShowCategories(ORDER_ASC_BY_NAME, FiltroArray);
