@@ -16,7 +16,6 @@ let FiltroArray = [];
 let min = 0;
 let max = 0;
 
-
 function sortAndShowCategories(criterio, array) {
     if (criterio === ORDER_ASC_BY_NAME)
     {
@@ -43,7 +42,7 @@ function sortAndShowCategories(criterio, array) {
     }
 
     document.getElementById("info").innerHTML = " ";
-    showList(FiltroArray);
+    showList(FiltroArray)
 }
 
 document.addEventListener("DOMContentLoaded", function () {

@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (localStorage.getItem("userLog") != undefined) {
         document.getElementById("Usuario").innerHTML = localStorage.getItem("userLog");
     } else (document.getElementById("logOut").innerHTML = "Iniciar sesión")
+    
 
 });
 
