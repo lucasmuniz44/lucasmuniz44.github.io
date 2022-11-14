@@ -51,9 +51,10 @@ document.addEventListener("DOMContentLoaded", () => (
             document.getElementById("productoSold").innerHTML = producto.soldCount;
 
             for (related of data.relatedProducts){
-                document.getElementById("productRelated").innerHTML += `<div class="col" >
-                <img onclick="setProduct(${related.id})"class="card-img-top" style="width: 19rem; cursor:pointer;" src="${related.image}" alt="Card image cap" onclick="setProdID()">
-            <h5 class="ms-1">${related.name}</h5>
+                document.getElementById("productRelated").innerHTML += `<div class="col">
+                <img onclick="setProduct(${related.id})" class="card-img-top" style="width: 19rem; cursor:pointer;" 
+                src="${related.image}" alt="Card image cap" onclick="setProdID()">
+                <h5 class="ms-1">${related.name}</h5>
                 </div>`
             }
             showImages(producto)
