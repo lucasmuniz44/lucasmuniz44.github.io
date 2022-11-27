@@ -1,21 +1,47 @@
-    if  (localStorage.getItem("userLog") != undefined){
-    document.getElementById("Usuario").innerHTML = localStorage.getItem("userLog");
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+    'use strict'
+  
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+        
+          form.classList.add('was-validated')
+          
+  
+    
+        }, false)
+      })
+  })()
+
+
+function autenticar(){
+    var Email = document.getElementById('inputEmail').value
+    var obj = localStorage.getItem(Email)
+    if(obj != null){
+        var data = JSON.parse(obj);
+    }
+    else{
+        
+        data = {
+            "primerNombre": "",
+            "segundoNombre": "",
+            "primerApellido": "",
+            "segundoApellido": "",
+            "email": Email,
+            "telefono": ""
+        }
+        localStorage.setItem(Email, JSON.stringify(data));
+    }
+    localStorage.setItem('userLog', Email);
+    window.location = "index.html"
 }
 
-document.getElementById("confirmado").addEventListener("click", function () {
-
-    inputEmail = document.getElementById("inputEmail").value
-    inputPass = document.getElementById("inputPass").value
-
-    if (inputEmail == null || inputEmail == "") {
-        window.location.href = "login.html";
-
-    } else if(inputPass == null || inputPass == ""){
-        window.location.href = "login.html";
-
-    } else if (inputEmail != "" && inputPass != ""){
-        localStorage.setItem("userLog", inputEmail)
-        window.location.href = "index.html";
-    }
-
-});

@@ -45,25 +45,31 @@
     </div>
   </nav>
 
-  <main class="mt-5">
-    <div class="container">
 
-      <div class="text-center">
-        <img class="mb-4" src="img/login.png" width="450" height="200">
-        <h3><strong>Inicio de sesión</strong></h3>
-        <label for="inputEmail" class="sr-only">Email</label>
-        <br>
-        <input type="email" id="inputEmail" placeholder="Email" required="" autofocus="">
-        <br>
-        <label for="inputPass" class="sr-only">Contraseña</label>
-        <br>
-        <input type="pass" id="inputPass" placeholder="Contraseña" required="">
-        <br><br>
-        <button class="btn btn-info" type="submit" id="confirmado">Ingresar</button>
-      </div>
-    </div>
+      <main class="mt-5">
+        <div class="container">
+          <div class="text-center">
+            <img class="mb-4" src="img/login.png" width="450" height="200">
+            <h3><strong>Inicio de sesión</strong></h3>
+             <form action="" class="row g-3 needs-validation" novalidate>
+              <label for="inputEmail" class="form-label text-dark sr-only">Email</label>
+              <div class="invalid-feedback">Debes ingresar un email</div>
+             <br>
+            <input type="email" class="form-control sr-only" id="inputEmail" placeholder="Correo electrónico"
+            minlength="1" autofocus="" required>
+            <br>
+            <label for="inputPass" class="form-label text-dark text-center">Contraseña</label>
+            <strong style="display: none;" id="alertError2">Debes ingresar una contraseña</strong>
+            <br>
+            <input type="password" class="form-control sr-only" id="inputPassword" placeholder="Contraseña" required="">
+            <br><br>
+            <button type="submit" class="btn btn-info" id="btn" onclick="autenticar()">Ingresar</button>
+          </div>
+        </div>
+    </form>
+
+  
   </main>
-
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
